@@ -100,7 +100,7 @@ public class AppConfig {
 		WiktionaryResource wiktionaryResource = null;
 		try {
 			wiktionaryResource = new WiktionaryResource(Language.ENGLISH,
-					cimtHome + "/LexSemResources/Wikitionary/jwktl_0.15.2_en20100403");
+					cimtHome + "/LexSemResources/Wiktionary/jwktl_0.15.2_en20100403");
 		} catch (LexicalSemanticResourceException e) {
 			log.error(ExceptionUtils.getStackTrace(e));
 		}

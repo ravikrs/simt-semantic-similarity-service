@@ -24,7 +24,7 @@ public class WiktionaryVSMSimilarityService implements SimilarityRelatednessServ
 	public double computeVectorRelatedness(List<String> vector1, List<String> vector2, String algorithmName) {
 		double averageScore = 0.0;
 		VSMTermSimilarity sm = new VSMTermSimilarity(SenseInventory.WIKTIONARY,
-				cimtHome + "ESA/VectorIndexes/Wikitionary", VSMSimilarityAlgorithm.fromString(algorithmName));
+				cimtHome + "ESA/VectorIndexes/Wiktionary", VSMSimilarityAlgorithm.fromString(algorithmName));
 		List<Double> relatednessValues = new ArrayList<>();
 		for (String token1 : vector1) {
 			for (String token2 : vector2) {
@@ -40,7 +40,7 @@ public class WiktionaryVSMSimilarityService implements SimilarityRelatednessServ
 		List<List<Double>> score = new ArrayList<>();
 		List<Double> rowScore;
 		VSMTermSimilarity sm = new VSMTermSimilarity(SenseInventory.WIKTIONARY,
-				cimtHome + "ESA/VectorIndexes/Wikitionary", VSMSimilarityAlgorithm.fromString(algorithmName));
+				cimtHome + "ESA/VectorIndexes/Wiktionary", VSMSimilarityAlgorithm.fromString(algorithmName));
 		for (String token1 : vector1) {
 			rowScore = new ArrayList<>();
 			for (String token2 : vector2) {
