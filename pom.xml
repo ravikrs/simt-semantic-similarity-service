@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>de.rwth.i9.cimt</groupId>
+	<artifactId>cimt-semantic-similarity</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>cimt-semantic-similarity</name>
+	<description>Semanitic similarity measures</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.3.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<cimt.version>0.0.1-SNAPSHOT</cimt.version>
+		<dkpro.similarity.version>2.1.0</dkpro.similarity.version>
+		<dkpro.jwpl.version>1.1.0</dkpro.jwpl.version>
+		<dkpro.lexsem.version>0.8.1</dkpro.lexsem.version>
+		<swagger.version>2.2.2</swagger.version>
+		<start-class>de.rwth.i9.cimt.ss.CimtSemanticSimilarityApplication</start-class>
+
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>de.rwth.i9.cimt</groupId>
+			<artifactId>cimt-nlp-impl</artifactId>
+			<version>${cimt.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>dkpro.similarity</groupId>
+			<artifactId>dkpro.similarity.algorithms.lsr-asl</artifactId>
+			<version>${dkpro.similarity.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.google.collections</groupId>
+					<artifactId>google-collections</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>dkpro.similarity</groupId>
+			<artifactId>dkpro.similarity.algorithms.vsm-asl</artifactId>
+			<version>${dkpro.similarity.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>dkpro.similarity</groupId>
+			<artifactId>dkpro.similarity.algorithms.sspace-gpl</artifactId>
+			<version>${dkpro.similarity.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>de.tudarmstadt.ukp.wikipedia</groupId>
+			<artifactId>de.tudarmstadt.ukp.wikipedia.datamachine</artifactId>
+			<version>${dkpro.jwpl.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
+			<artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.wordnet-asl</artifactId>
+			<version>${dkpro.lexsem.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>net.sf.extjwnl</groupId>
+					<artifactId>extjwnl</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
+			<artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.wiktionary-asl</artifactId>
+			<version>${dkpro.lexsem.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>dkpro.similarity</groupId>
+			<artifactId>dkpro.similarity.uima.vsm-asl</artifactId>
+			<version>${dkpro.similarity.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.sharispe</groupId>
+			<artifactId>slib-sml</artifactId>
+			<version>1.0-SNAPSHOT</version>
+			<exclusions>
+				<exclusion>
+					<groupId>fr.lgi2p.kid</groupId>
+					<artifactId>slib-utils</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.apache.lucene</groupId>
+					<artifactId>lucene-core</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${swagger.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${swagger.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.extjwnl</groupId>
+			<artifactId>extjwnl</artifactId>
+			<version>1.5.3</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+	<repositories>
+		<repository>
+			<id>ukp-oss-releases</id>
+			<url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-releases</url>
+		</repository>
+		<repository>
+			<id>ukp-oss-snapshots</id>
+			<url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots</url>
+		</repository>
+	</repositories>
+
+</project>
