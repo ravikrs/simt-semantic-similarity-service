@@ -54,9 +54,9 @@ public class AppConfig {
 	}
 
 	private ApiInfo apiInfo() {
-		return new ApiInfoBuilder().title("Semantic Keyterm Extraction Toolkit - SKET API")
-				.description("Rest API can be used to extract keyphrases/keywords")
-				.contact("Ravi" + " https://learntech.rwth-aachen.de/" + " ravi.singh@rwth-aachen.de")
+		return new ApiInfoBuilder().title("CIMT Semantic Similarity Toolkit API")
+				.description("Rest API can be used to compute semantic similarity between words/vectors")
+				.contact("Ravi Kumar Singh" + "   https://learntech.rwth-aachen.de/" + "   ravi.singh@rwth-aachen.de")
 				.license("Apache License Version 2.0")
 				.licenseUrl("https://github.com/springfox/springfox/blob/master/LICENSE").version("1.0").build();
 	}
