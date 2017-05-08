@@ -23,7 +23,7 @@ public class WordNetVSMSimilarityService implements SimilarityRelatednessService
 	@Override
 	public double computeVectorRelatedness(List<String> vector1, List<String> vector2, String algorithmName) {
 		double averageScore = 0.0;
-		VSMTermSimilarity sm = new VSMTermSimilarity(SenseInventory.WORDNET, cimtHome + "ESA/VectorIndexes/WordNet",
+		VSMTermSimilarity sm = new VSMTermSimilarity(SenseInventory.WORDNET, cimtHome + "/ESA/VectorIndexes/WordNet",
 				VSMSimilarityAlgorithm.fromString(algorithmName));
 		List<Double> relatednessValues = new ArrayList<>();
 		for (String token1 : vector1) {
@@ -39,7 +39,7 @@ public class WordNetVSMSimilarityService implements SimilarityRelatednessService
 	public List<List<Double>> computeWordRelatedness(List<String> vector1, List<String> vector2, String algorithmName) {
 		List<List<Double>> score = new ArrayList<>();
 		List<Double> rowScore;
-		VSMTermSimilarity sm = new VSMTermSimilarity(SenseInventory.WORDNET, cimtHome + "ESA/VectorIndexes/WordNet",
+		VSMTermSimilarity sm = new VSMTermSimilarity(SenseInventory.WORDNET, cimtHome + "/ESA/VectorIndexes/WordNet",
 				VSMSimilarityAlgorithm.fromString(algorithmName));
 		for (String token1 : vector1) {
 			rowScore = new ArrayList<>();

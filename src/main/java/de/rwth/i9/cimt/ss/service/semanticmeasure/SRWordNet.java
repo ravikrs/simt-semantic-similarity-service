@@ -53,7 +53,7 @@ public class SRWordNet implements SimilarityRelatednessService {
 		URIFactory factory = URIFactoryMemory.getSingleton();
 		URI guri = factory.getURI("http://graph/wordnet/");
 		wordnet = new GraphMemory(guri);
-		String dataloc = cimtHome + "src/main/resources/en/wordnet3.0/dict/";
+		String dataloc = cimtHome + "/LexSemResources/WordNet3.0/dict/";
 
 		// We load the data into the graph
 		GraphLoader_Wordnet loader = new GraphLoader_Wordnet();
@@ -141,7 +141,12 @@ public class SRWordNet implements SimilarityRelatednessService {
 			for (Set<URI> vector1Uri : vector1Uris) {
 				rowScore = new ArrayList<>();
 				for (Set<URI> vector2Uri : vector1Uris) {
-					rowScore.add(engine.compare(confGroupwise, confPairwise, vector1Uri, vector2Uri));
+					if (vector1Uri.size() > 0 && vector2Uri.size() > 0) {
+						rowScore.add(engine.compare(confGroupwise, confPairwise, vector1Uri, vector2Uri));
+					} else {
+						rowScore.add(0.0);
+					}
+
 				}
 				score.add(rowScore);
 			}

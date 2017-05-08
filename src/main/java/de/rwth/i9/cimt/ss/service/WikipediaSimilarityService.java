@@ -18,12 +18,12 @@ public class WikipediaSimilarityService implements SimilarityRelatednessService 
 	private static final Logger log = LoggerFactory.getLogger(WikipediaSimilarityService.class);
 	@Autowired
 	@Lazy
-	Wikipedia wikipedia;
+	Wikipedia simpleWikiDb;
 
 	@Override
 	public double computeVectorRelatedness(List<String> vector1, List<String> vector2, String algorithmName) {
 		double relatednessScore = 0.0;
-		WikipediaTermSimilarity sm = new WikipediaTermSimilarity(wikipedia,
+		WikipediaTermSimilarity sm = new WikipediaTermSimilarity(simpleWikiDb,
 				WikipediaSimilarityAlgorithm.fromString(algorithmName));
 		relatednessScore = sm.calculatesWikipediaBasedMeasure(vector1, vector2);
 		return relatednessScore;
@@ -33,7 +33,7 @@ public class WikipediaSimilarityService implements SimilarityRelatednessService 
 	public List<List<Double>> computeWordRelatedness(List<String> vector1, List<String> vector2, String algorithmName) {
 		List<List<Double>> score = new ArrayList<>();
 		List<Double> rowScore;
-		WikipediaTermSimilarity sm = new WikipediaTermSimilarity(wikipedia,
+		WikipediaTermSimilarity sm = new WikipediaTermSimilarity(simpleWikiDb,
 				WikipediaSimilarityAlgorithm.fromString(algorithmName));
 		for (String token1 : vector1) {
 			rowScore = new ArrayList<>();
