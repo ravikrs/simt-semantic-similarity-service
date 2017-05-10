@@ -8,12 +8,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import de.rwth.i9.cimt.ss.algorithm.similarity.vsm.VSMTermSimilarity;
-import de.rwth.i9.cimt.ss.algorithm.similarity.vsm.VSMTermSimilarity.VSMSimilarityAlgorithm;
-import de.rwth.i9.cimt.ss.constants.SenseInventory;
+import de.rwth.i9.cimt.ss.lib.algorithm.similarity.vsm.VSMTermSimilarity;
+import de.rwth.i9.cimt.ss.lib.algorithm.similarity.vsm.VSMTermSimilarity.VSMSimilarityAlgorithm;
+import de.rwth.i9.cimt.ss.lib.constants.SenseInventory;
+import de.rwth.i9.cimt.ss.lib.util.ScoringUtil;
+import de.rwth.i9.cimt.ss.lib.util.ScoringUtil.ScoringStrategy;
 import de.rwth.i9.cimt.ss.service.SimilarityRelatednessService;
-import de.rwth.i9.cimt.ss.util.ScoringUtil;
-import de.rwth.i9.cimt.ss.util.ScoringUtil.ScoringStrategy;
 
 @Service("wktnlVSMSimilarityService")
 public class WiktionaryVSMSimilarityService implements SimilarityRelatednessService {

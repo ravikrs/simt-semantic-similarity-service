@@ -12,7 +12,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 import com.google.common.base.Predicates;
 
-import de.rwth.i9.cimt.ss.algorithm.similarity.lsr.WordNetResource;
+import de.rwth.i9.cimt.ss.lib.algorithm.similarity.lsr.CIMTWordNetResource;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.exception.LexicalSemanticResourceException;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.wiktionary.WiktionaryResource;
 import de.tudarmstadt.ukp.wikipedia.api.DatabaseConfiguration;
@@ -81,10 +81,10 @@ public class AppConfigSS {
 
 	@Bean("wordNetResource")
 	@Lazy
-	public WordNetResource getWordNetResource() {
-		WordNetResource wordNetResource = null;
+	public CIMTWordNetResource getCIMTWordNetResource() {
+		CIMTWordNetResource wordNetResource = null;
 		try {
-			wordNetResource = new WordNetResource(cimtHome + "/LexSemResources/WordNet3.0/wordnet_properties.xml");
+			wordNetResource = new CIMTWordNetResource(cimtHome + "/LexSemResources/WordNet3.0/wordnet_properties.xml");
 		} catch (LexicalSemanticResourceException e) {
 			log.error(ExceptionUtils.getStackTrace(e));
 		}

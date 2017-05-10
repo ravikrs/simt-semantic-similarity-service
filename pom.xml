@@ -38,6 +38,11 @@
 			<version>${cimt.version}</version>
 		</dependency>
 		<dependency>
+			<groupId>de.rwth.i9.cimt</groupId>
+			<artifactId>cimt-ss-lib</artifactId>
+			<version>${cimt.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
@@ -46,56 +51,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>dkpro.similarity</groupId>
-			<artifactId>dkpro.similarity.algorithms.lsr-asl</artifactId>
-			<version>${dkpro.similarity.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>com.google.collections</groupId>
-					<artifactId>google-collections</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>dkpro.similarity</groupId>
-			<artifactId>dkpro.similarity.algorithms.vsm-asl</artifactId>
-			<version>${dkpro.similarity.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>dkpro.similarity</groupId>
-			<artifactId>dkpro.similarity.algorithms.sspace-gpl</artifactId>
-			<version>${dkpro.similarity.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>de.tudarmstadt.ukp.wikipedia</groupId>
-			<artifactId>de.tudarmstadt.ukp.wikipedia.datamachine</artifactId>
-			<version>${dkpro.jwpl.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
-			<artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.wordnet-asl</artifactId>
-			<version>${dkpro.lexsem.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>net.sf.extjwnl</groupId>
-					<artifactId>extjwnl</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
-			<artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.wiktionary-asl</artifactId>
-			<version>${dkpro.lexsem.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>dkpro.similarity</groupId>
-			<artifactId>dkpro.similarity.uima.vsm-asl</artifactId>
-			<version>${dkpro.similarity.version}</version>
 		</dependency>
 
 		<dependency>
@@ -133,11 +88,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>net.sf.extjwnl</groupId>
-			<artifactId>extjwnl</artifactId>
-			<version>1.5.3</version>
-		</dependency>
 	</dependencies>
 
 	<build>
@@ -149,14 +99,6 @@
 		</plugins>
 	</build>
 	<repositories>
-		<repository>
-			<id>ukp-oss-releases</id>
-			<url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-releases</url>
-		</repository>
-		<repository>
-			<id>ukp-oss-snapshots</id>
-			<url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots</url>
-		</repository>
 		<repository>
 			<id>sonatype-nexus-snapshots</id>
 			<name>Sonatype Nexus snapshot repository</name>

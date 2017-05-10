@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
-import de.rwth.i9.cimt.ss.algorithm.similarity.wikipedia.WikipediaTermSimilarity;
-import de.rwth.i9.cimt.ss.algorithm.similarity.wikipedia.WikipediaTermSimilarity.WikipediaSimilarityAlgorithm;
+import de.rwth.i9.cimt.ss.lib.algorithm.similarity.wikipedia.WikipediaTermSimilarity;
+import de.rwth.i9.cimt.ss.lib.algorithm.similarity.wikipedia.WikipediaTermSimilarity.WikipediaSimilarityAlgorithm;
 import de.tudarmstadt.ukp.wikipedia.api.Wikipedia;
 
 @Service("wikipediaSimilarityService")
