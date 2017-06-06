@@ -22,7 +22,7 @@ public class WordNetLSRSimilarityService implements SimilarityRelatednessService
 	private LexicalSemanticResource wordNetResource;
 
 	@Override
-	public double computeVectorRelatedness(List<String> vector1, List<String> vector2, String algorithmName) {
+	public double computeRelatedness(List<String> vector1, List<String> vector2, String algorithmName) {
 		double relatednessScore = 0.0;
 		LSRTermSimilarity sm = new LSRTermSimilarity(wordNetResource, LSRSimilarityAlgorithm.fromString(algorithmName));
 		relatednessScore = sm.calculateLSRSimilarityMeasureWordNet(vector1, vector2);

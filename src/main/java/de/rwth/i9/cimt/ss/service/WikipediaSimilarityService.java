@@ -21,7 +21,7 @@ public class WikipediaSimilarityService implements SimilarityRelatednessService 
 	Wikipedia simpleWikiDb;
 
 	@Override
-	public double computeVectorRelatedness(List<String> vector1, List<String> vector2, String algorithmName) {
+	public double computeRelatedness(List<String> vector1, List<String> vector2, String algorithmName) {
 		double relatednessScore = 0.0;
 		WikipediaTermSimilarity sm = new WikipediaTermSimilarity(simpleWikiDb,
 				WikipediaSimilarityAlgorithm.fromString(algorithmName));

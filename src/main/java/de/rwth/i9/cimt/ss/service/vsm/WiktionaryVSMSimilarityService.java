@@ -21,7 +21,7 @@ public class WiktionaryVSMSimilarityService implements SimilarityRelatednessServ
 	private @Value("${cimt.home}") String cimtHome;
 
 	@Override
-	public double computeVectorRelatedness(List<String> vector1, List<String> vector2, String algorithmName) {
+	public double computeRelatedness(List<String> vector1, List<String> vector2, String algorithmName) {
 		double averageScore = 0.0;
 		VSMTermSimilarity sm = new VSMTermSimilarity(SenseInventory.WIKTIONARY,
 				cimtHome + "/ESA/VectorIndexes/Wiktionary", VSMSimilarityAlgorithm.fromString(algorithmName));

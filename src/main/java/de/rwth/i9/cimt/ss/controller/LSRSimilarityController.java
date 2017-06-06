@@ -1,5 +1,6 @@
 package de.rwth.i9.cimt.ss.controller;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import de.rwth.i9.cimt.nlp.opennlp.OpenNLPImplSpring;
+import de.rwth.i9.cimt.ss.model.SentenceSimilarityVector;
 import de.rwth.i9.cimt.ss.model.SimilarityVector;
 import de.rwth.i9.cimt.ss.service.SimilarityRelatednessService;
 
@@ -27,39 +30,54 @@ public class LSRSimilarityController {
 	@Autowired
 	SimilarityRelatednessService wktnlLSRSimilarityService;
 
+	@Autowired
+	OpenNLPImplSpring openNLPImplSpring;
+
 	@RequestMapping(value = "/wordnet", method = RequestMethod.GET)
-	public double computeRelatednessScoreTokensWordNet(@RequestParam("token1") String token1,
+	public double computeTokensRelatednessScoreWordNet(@RequestParam("token1") String token1,
 			@RequestParam("token2") String token2) {
-		return wnLSRSimilarityService.computeVectorRelatedness(Arrays.asList(token1), Arrays.asList(token2), "default");
+		return wnLSRSimilarityService.computeRelatedness(Arrays.asList(token1), Arrays.asList(token2), "default");
 	}
 
 	@RequestMapping(value = "/wordnet", method = RequestMethod.POST)
-	public double computeRelatednessScoreListWordNet(@RequestBody SimilarityVector sv) {
-		return wnLSRSimilarityService.computeVectorRelatedness(sv.getVector1(), sv.getVector2(),
-				sv.getSimilarityAlgorithm());
+	public double computeTokensListRelatednessScoreWordNet(@RequestBody SimilarityVector sv) {
+		return wnLSRSimilarityService.computeRelatedness(sv.getVector1(), sv.getVector2(), sv.getSimilarityAlgorithm());
+	}
+
+	@RequestMapping(value = "/wordnet/sentence", method = RequestMethod.POST)
+	public double computeSentenceRelatednessScoreWordNet(@RequestBody SentenceSimilarityVector ssv) {
+		List<String> text1tokens = new ArrayList<>(openNLPImplSpring.getTokensFromText(ssv.getText1()));
+		List<String> text2tokens = new ArrayList<>(openNLPImplSpring.getTokensFromText(ssv.getText2()));
+		return wnLSRSimilarityService.computeRelatedness(text1tokens, text2tokens, ssv.getSimilarityAlgorithm());
 	}
 
 	@RequestMapping(value = "/wordnet/vector", method = RequestMethod.POST)
-	public List<List<Double>> computeRelatednessScoreWordWordNet(@RequestBody SimilarityVector sv) {
+	public List<List<Double>> computeVectorRelatednessScoreWordNet(@RequestBody SimilarityVector sv) {
 		return wnLSRSimilarityService.computeWordRelatedness(sv.getVector1(), sv.getVector2(),
 				sv.getSimilarityAlgorithm());
 	}
 
 	@RequestMapping(value = "/wiktionary", method = RequestMethod.GET)
-	public double computeRelatednessScoreTokensWiktionary(@RequestParam("token1") String token1,
+	public double computeTokensRelatednessScoreWiktionary(@RequestParam("token1") String token1,
 			@RequestParam("token2") String token2) {
-		return wktnlLSRSimilarityService.computeVectorRelatedness(Arrays.asList(token1), Arrays.asList(token2),
-				"default");
+		return wktnlLSRSimilarityService.computeRelatedness(Arrays.asList(token1), Arrays.asList(token2), "default");
 	}
 
 	@RequestMapping(value = "/wiktionary", method = RequestMethod.POST)
-	public double computeRelatednessScoreListWiktionary(@RequestBody SimilarityVector sv) {
-		return wktnlLSRSimilarityService.computeVectorRelatedness(sv.getVector1(), sv.getVector2(),
+	public double computeTokensListRelatednessScoreWiktionary(@RequestBody SimilarityVector sv) {
+		return wktnlLSRSimilarityService.computeRelatedness(sv.getVector1(), sv.getVector2(),
 				sv.getSimilarityAlgorithm());
 	}
 
-	@RequestMapping(value = "/wiktionary/vector", method = RequestMethod.POST)
-	public List<List<Double>> computeRelatednessScoreWordWiktionary(@RequestBody SimilarityVector sv) {
+	@RequestMapping(value = "/wiktionary/sentence", method = RequestMethod.POST)
+	public double computeSentenceRelatednessScoreWiktionary(@RequestBody SentenceSimilarityVector ssv) {
+		List<String> text1tokens = new ArrayList<>(openNLPImplSpring.getTokensFromText(ssv.getText1()));
+		List<String> text2tokens = new ArrayList<>(openNLPImplSpring.getTokensFromText(ssv.getText2()));
+		return wktnlLSRSimilarityService.computeRelatedness(text1tokens, text2tokens, ssv.getSimilarityAlgorithm());
+	}
+
+	@RequestMapping(value = "/wiktionary/word", method = RequestMethod.POST)
+	public List<List<Double>> computeWordRelatednessScoreWiktionary(@RequestBody SimilarityVector sv) {
 		return wktnlLSRSimilarityService.computeWordRelatedness(sv.getVector1(), sv.getVector2(),
 				sv.getSimilarityAlgorithm());
 	}

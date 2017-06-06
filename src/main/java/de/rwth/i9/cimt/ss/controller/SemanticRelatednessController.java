@@ -28,7 +28,7 @@ public class SemanticRelatednessController {
 
 	@RequestMapping(value = "/vector/wordnet", method = RequestMethod.POST)
 	public Double getSRVectorScoreWordNet(@RequestBody SimilarityVector sv) {
-		return srWordNet.computeVectorRelatedness(sv.getVector1(), sv.getVector2(), sv.getSimilarityAlgorithm());
+		return srWordNet.computeRelatedness(sv.getVector1(), sv.getVector2(), sv.getSimilarityAlgorithm());
 	}
 
 	@RequestMapping(value = "/word/wordnet", method = RequestMethod.POST)

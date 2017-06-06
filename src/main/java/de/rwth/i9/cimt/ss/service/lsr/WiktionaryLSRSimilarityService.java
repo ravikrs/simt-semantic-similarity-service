@@ -21,7 +21,7 @@ public class WiktionaryLSRSimilarityService implements SimilarityRelatednessServ
 	private LexicalSemanticResource wiktionaryResource;
 
 	@Override
-	public double computeVectorRelatedness(List<String> vector1, List<String> vector2, String algorithmName) {
+	public double computeRelatedness(List<String> vector1, List<String> vector2, String algorithmName) {
 		double relatednessScore = 0.0;
 		LSRTermSimilarity sm = new LSRTermSimilarity(wiktionaryResource,
 				LSRSimilarityAlgorithm.fromString(algorithmName));

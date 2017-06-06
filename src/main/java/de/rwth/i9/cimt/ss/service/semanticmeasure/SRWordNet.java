@@ -84,7 +84,7 @@ public class SRWordNet implements SimilarityRelatednessService {
 	}
 
 	@Override
-	public double computeVectorRelatedness(List<String> vector1, List<String> vector2, String algorithmName) {
+	public double computeRelatedness(List<String> vector1, List<String> vector2, String algorithmName) {
 		double relatednessScore = 0.0;
 		try {
 			if (wordnet == null) {
