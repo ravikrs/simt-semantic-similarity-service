@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>de.rwth.i9.cimt</groupId>
-	<artifactId>cimt-semantic-similarity</artifactId>
+	<groupId>de.rwth.i9.simt</groupId>
+	<artifactId>simt-semantic-similarity</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>cimt-semantic-similarity</name>
-	<description>Semanitic similarity measures</description>
+	<name>simt-semantic-similarity</name>
+	<description>SIMT Semanitic Similarity Servie</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -27,7 +27,7 @@
 		<dkpro.jwpl.version>1.1.0</dkpro.jwpl.version>
 		<dkpro.lexsem.version>0.8.1</dkpro.lexsem.version>
 		<swagger.version>2.2.2</swagger.version>
-		<start-class>de.rwth.i9.cimt.ss.CimtSemanticSimilarityApplication</start-class>
+		<start-class>de.rwth.i9.cimt.ss.SimtSemanticSimilarityServiceApplication</start-class>
 
 	</properties>
 

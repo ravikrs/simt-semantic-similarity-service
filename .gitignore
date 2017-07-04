@@ -30,3 +30,6 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+/localhost_simplewikidb_simple_english_hypoCountMap
+/catGraphSer_localhost_simplewikidb_simple_english
+/WikipediaInlinkCache_simple_english_null
