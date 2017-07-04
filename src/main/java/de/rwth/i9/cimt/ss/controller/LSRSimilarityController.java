@@ -76,7 +76,7 @@ public class LSRSimilarityController {
 		return wktnlLSRSimilarityService.computeRelatedness(text1tokens, text2tokens, ssv.getSimilarityAlgorithm());
 	}
 
-	@RequestMapping(value = "/wiktionary/word", method = RequestMethod.POST)
+	@RequestMapping(value = "/wiktionary/vector", method = RequestMethod.POST)
 	public List<List<Double>> computeWordRelatednessScoreWiktionary(@RequestBody SimilarityVector sv) {
 		return wktnlLSRSimilarityService.computeWordRelatedness(sv.getVector1(), sv.getVector2(),
 				sv.getSimilarityAlgorithm());
