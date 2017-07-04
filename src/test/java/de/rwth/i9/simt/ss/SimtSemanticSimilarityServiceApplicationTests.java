@@ -1,4 +1,4 @@
-package de.rwth.i9.cimt.ss;
+package de.rwth.i9.simt.ss;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class CimtSemanticSimilarityApplicationTests {
+public class SimtSemanticSimilarityServiceApplicationTests {
 
 	@Test
 	public void contextLoads() {
