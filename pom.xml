@@ -27,7 +27,7 @@
 		<dkpro.jwpl.version>1.1.0</dkpro.jwpl.version>
 		<dkpro.lexsem.version>0.8.1</dkpro.lexsem.version>
 		<swagger.version>2.2.2</swagger.version>
-		<start-class>de.rwth.i9.cimt.ss.SimtSemanticSimilarityServiceApplication</start-class>
+		<start-class>de.rwth.i9.simt.ss.SimtSemanticSimilarityServiceApplication</start-class>
 
 	</properties>
 
