@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
-import de.rwth.i9.cimt.ss.lib.algorithm.similarity.lsr.LSRTermSimilarity;
-import de.rwth.i9.cimt.ss.lib.algorithm.similarity.lsr.LSRTermSimilarity.LSRSimilarityAlgorithm;
+import de.rwth.i9.simt.ss.lib.algorithm.similarity.lsr.LSRTermSimilarity;
+import de.rwth.i9.simt.ss.lib.algorithm.similarity.lsr.LSRTermSimilarity.LSRSimilarityAlgorithm;
 import de.rwth.i9.simt.ss.service.SimilarityRelatednessService;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.LexicalSemanticResource;
 

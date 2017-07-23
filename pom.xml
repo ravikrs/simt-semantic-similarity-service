@@ -33,13 +33,13 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>de.rwth.i9.cimt</groupId>
-			<artifactId>cimt-nlp-impl</artifactId>
+			<groupId>de.rwth.i9.simt</groupId>
+			<artifactId>simt-nlp-impl</artifactId>
 			<version>${cimt.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>de.rwth.i9.cimt</groupId>
-			<artifactId>cimt-ss-lib</artifactId>
+			<groupId>de.rwth.i9.simt</groupId>
+			<artifactId>simt-ss-lib</artifactId>
 			<version>${cimt.version}</version>
 		</dependency>
 		<dependency>

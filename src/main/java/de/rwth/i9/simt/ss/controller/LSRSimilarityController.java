@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import de.rwth.i9.cimt.nlp.opennlp.OpenNLPImplSpring;
+import de.rwth.i9.simt.nlp.opennlp.OpenNLPImplSpring;
 import de.rwth.i9.simt.ss.model.SentenceSimilarityVector;
 import de.rwth.i9.simt.ss.model.SimilarityVector;
 import de.rwth.i9.simt.ss.service.SimilarityRelatednessService;

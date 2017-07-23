@@ -7,7 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import de.rwth.i9.cimt.ss.lib.algorithm.similarity.sspace.SSTermSimilarity;
+import de.rwth.i9.simt.ss.lib.algorithm.similarity.sspace.SSTermSimilarity;
 
 @Service("ssSimilarityService")
 public class SSSimilarityService implements SimilarityRelatednessService {

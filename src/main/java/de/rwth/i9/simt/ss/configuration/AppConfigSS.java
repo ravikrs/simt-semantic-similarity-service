@@ -8,11 +8,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 import com.google.common.base.Predicates;
 
-import de.rwth.i9.cimt.ss.lib.algorithm.similarity.lsr.CIMTWordNetResource;
+import de.rwth.i9.simt.ss.lib.algorithm.similarity.lsr.CIMTWordNetResource;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.exception.LexicalSemanticResourceException;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.wiktionary.WiktionaryResource;
 import de.tudarmstadt.ukp.wikipedia.api.DatabaseConfiguration;
@@ -28,7 +29,8 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
-@ComponentScan({ "de.rwth.i9.cimt.**" })
+@ComponentScan({ "de.rwth.i9.simt.**" })
+@PropertySource("classpath:opennlp.properties")
 @Lazy(true)
 @EnableSwagger2
 public class AppConfigSS {

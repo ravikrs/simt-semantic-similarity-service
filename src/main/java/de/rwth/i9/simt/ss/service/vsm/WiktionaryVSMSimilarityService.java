@@ -8,11 +8,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import de.rwth.i9.cimt.ss.lib.algorithm.similarity.vsm.VSMTermSimilarity;
-import de.rwth.i9.cimt.ss.lib.algorithm.similarity.vsm.VSMTermSimilarity.VSMSimilarityAlgorithm;
-import de.rwth.i9.cimt.ss.lib.constants.SenseInventory;
-import de.rwth.i9.cimt.ss.lib.util.ScoringUtil;
-import de.rwth.i9.cimt.ss.lib.util.ScoringUtil.ScoringStrategy;
+import de.rwth.i9.simt.ss.lib.algorithm.similarity.vsm.VSMTermSimilarity;
+import de.rwth.i9.simt.ss.lib.algorithm.similarity.vsm.VSMTermSimilarity.VSMSimilarityAlgorithm;
+import de.rwth.i9.simt.ss.lib.constants.SenseInventory;
+import de.rwth.i9.simt.ss.lib.util.ScoringUtil;
+import de.rwth.i9.simt.ss.lib.util.ScoringUtil.ScoringStrategy;
 import de.rwth.i9.simt.ss.service.SimilarityRelatednessService;
 
 @Service("wktnlVSMSimilarityService")
